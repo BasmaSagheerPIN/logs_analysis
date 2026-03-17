@@ -31,7 +31,7 @@ kpis = service.get_home_overview(df)
 
 c1, c2, c3 = st.columns(3)
 with c1:
-    st.metric("Total requests", kpis["total_requests"])
+    st.metric("Total system/user transactions", kpis["total_requests"])
 with c2:
     st.metric("Error rate", f'{kpis["error_rate_pct"]}%')
 with c3:
