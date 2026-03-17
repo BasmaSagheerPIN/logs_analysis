@@ -15,8 +15,8 @@ import streamlit as st
 from src.auth.auth_manager import AuthManager
 
 st.set_page_config(
-    page_title="Logbook Observability Dashboard",
-    page_icon="📊",
+    page_title="Logs analysis Dashboard",
+    page_icon="https://upload.wikimedia.org/wikipedia/commons/7/77/Logo_of_People_in_Need.png",
     layout="wide",
 )
 
@@ -24,25 +24,24 @@ st.set_page_config(
 auth_manager = AuthManager()
 auth_manager.render_placeholder_banner()
 
-st.title("📊 Logbook Observability Dashboard")
+st.title(" Logs analysis Dashboard")
 st.write(
     """
 This dashboard is designed for debugging and analyzing backend logs stored in MongoDB.
 
 Use the pages in the sidebar:
 - **Home**: quick overview and raw sample
+- **Raw Log Explorer**: Power BI–style filtering and export
 - **System Health**: requests/minute, error rate, avg latency
-- **Security**: requests by IP/user and simple suspicious-activity heuristics
 - **Backend Performance**: slow endpoints and error endpoints
 - **DB Errors**: database-related errors with stack traces and export
-- **Raw Log Explorer**: Power BI–style filtering and export
+- **Security**: requests by IP/user and simple suspicious-activity heuristics
+
 """
 )
 
 st.info(
     """
-**Connection settings live in the sidebar on every page.**
-That lets developers point the dashboard to a local, dev, staging, or production MongoDB instance
-without editing code.
+**DB Connection settings live in the sidebar on every page.**
 """
 )
