@@ -21,7 +21,7 @@ from src.models.config_models import ConnectionConfig, LogFilters
 
 
 def render_connection_settings() -> ConnectionConfig:
-    st.sidebar.header("Connection")
+    st.sidebar.header("Connection, it's shown temproary")
 
     mongo_uri = st.sidebar.text_input(
         "Mongo URI",
