@@ -1,3 +1,4 @@
+# logs_analysis
 # Logbook Observability Dashboard
 
 A professional Streamlit project for exploring backend logs stored in MongoDB.
