@@ -31,8 +31,7 @@ df = service.load_logs(filters)
 slow_endpoints = service.slow_endpoints(df).head(20)
 error_endpoints = service.error_endpoints(df).head(20)
 
-bar_chart(slow_endpoints, x="metadata.endpoint", y="avg_latency_ms", title="Slow endpoints by average latency")
 bar_chart(error_endpoints, x="metadata.endpoint", y="errors", title="Endpoints with most errors")
-
 show_dataframe_with_export(slow_endpoints, "slow_endpoints.csv", "Slow endpoints")
 show_dataframe_with_export(error_endpoints, "error_endpoints.csv", "Error endpoints")
+bar_chart(slow_endpoints, x="metadata.endpoint", y="avg_latency_ms", title="Slow endpoints by average latency")

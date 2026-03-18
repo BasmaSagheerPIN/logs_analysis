@@ -61,16 +61,16 @@ def render_log_filters(
     st.sidebar.header("Filters")
 
     levels = st.sidebar.multiselect("Level", options.get("levels", []), default=options.get("levels", []))
-    event_types = st.sidebar.multiselect("Event type", options.get("event_types", []), default=options.get("event_types", []))
-    methods = st.sidebar.multiselect("Method", options.get("methods", []), default=options.get("methods", []))
+    event_types = st.sidebar.multiselect("Event type", options.get("event_types", []), default=[])
+    methods = st.sidebar.multiselect("Method", options.get("methods", []), default=[])
     environments = st.sidebar.multiselect("Environment", options.get("environments", []), default=options.get("environments", []))
-    status_codes = st.sidebar.multiselect("Status code", options.get("status_codes", []), default=[])
+    status_codes = st.sidebar.multiselect("Response status code", options.get("status_codes", []), default=[])
 
     endpoint_text = st.sidebar.text_input("Endpoint contains")
     user_text = st.sidebar.text_input("User ID contains")
     ip_text = st.sidebar.text_input("IP contains")
     free_text = st.sidebar.text_input("Search message / error / SQL / stack")
-    only_errors = st.sidebar.checkbox("Only errors", value=False)
+    # only_errors = st.sidebar.checkbox("Only errors", value=False)
 
     # Date/time defaults: last 7 days when data exists.
     default_start_date = None
@@ -105,7 +105,7 @@ def render_log_filters(
         user_text=user_text,
         ip_text=ip_text,
         free_text=free_text,
-        only_errors=only_errors,
+        # only_errors=only_errors,
         start_date=start_date,
         end_date=end_date,
         start_time=start_time,

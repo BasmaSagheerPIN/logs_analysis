@@ -271,7 +271,7 @@ class LogService:
 
         temp = df.copy()
         mask = (
-            temp[ERROR_NAME_FIELD].fillna("").str.contains("database|sequelize|mongo|sql", case=False, regex=True)
+            temp[MESSAGE_FIELD].fillna("").str.contains("database|sequelize|mongo|sql", case=False, regex=True)
             | temp[ERROR_MESSAGE_FIELD].fillna("").str.contains("database|sequelize|mongo|sql|column|relation|constraint|query", case=False, regex=True)
             | temp[STACK_FIELD].fillna("").str.contains("sequelize|mongo|sql", case=False, regex=True)
         )
