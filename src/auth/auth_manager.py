@@ -16,4 +16,4 @@ import streamlit as st
 
 class AuthManager:
     def render_placeholder_banner(self) -> None:
-        st.caption("Authentication: disabled for now. Project structure is prepared for future Entra ID integration.")
+        st.caption("Authentication: disabled for now. Entra ID integration could be implemented later")
